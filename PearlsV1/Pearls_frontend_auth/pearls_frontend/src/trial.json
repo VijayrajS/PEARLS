@@ -1,0 +1,773 @@
+{
+    "clusters": [{
+        "cluster_number": 0,
+        "centroid": {
+            "Petal Length": 6.350746268656714,
+            "Petal Width": 2.861194029850748,
+            "Sepal Length": 4.992537313432837,
+            "Sepal width": 1.6761194029850743
+        },
+        "pearl_list": [{
+            "pearl_number": 0,
+            "centroid": {
+                "Petal Length": 5.978048780487804,
+                "Petal Width": 2.7365853658536587,
+                "Sepal Length": 4.453658536585366,
+                "Sepal width": 1.4560975609756097
+            },
+            "pearl_P": 2,
+            "pearl_radius": 1.1015699142706172,
+            "pearl_centroid_3D": [0.68, 0.0, -0.125],
+            "pearl_list": {
+                "32": {
+                    "Name": "Flower 33",
+                    "Petal Length": 7.0,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 4.7,
+                    "Sepal width": 1.4
+                },
+                "33": {
+                    "Name": "Flower 34",
+                    "Petal Length": 6.4,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 4.5,
+                    "Sepal width": 1.5
+                },
+                "35": {
+                    "Name": "Flower 36",
+                    "Petal Length": 5.5,
+                    "Petal Width": 2.3,
+                    "Sepal Length": 4.0,
+                    "Sepal width": 1.3
+                },
+                "36": {
+                    "Name": "Flower 37",
+                    "Petal Length": 6.5,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.6,
+                    "Sepal width": 1.5
+                },
+                "37": {
+                    "Name": "Flower 38",
+                    "Petal Length": 5.7,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.5,
+                    "Sepal width": 1.3
+                },
+                "38": {
+                    "Name": "Flower 39",
+                    "Petal Length": 6.3,
+                    "Petal Width": 3.3,
+                    "Sepal Length": 4.7,
+                    "Sepal width": 1.6
+                },
+                "40": {
+                    "Name": "Flower 41",
+                    "Petal Length": 6.6,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 4.6,
+                    "Sepal width": 1.3
+                },
+                "41": {
+                    "Name": "Flower 42",
+                    "Petal Length": 5.2,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 3.9,
+                    "Sepal width": 1.4
+                },
+                "42": {
+                    "Name": "Flower 43",
+                    "Petal Length": 5.0,
+                    "Petal Width": 2.0,
+                    "Sepal Length": 3.5,
+                    "Sepal width": 1.0
+                },
+                "43": {
+                    "Name": "Flower 44",
+                    "Petal Length": 5.9,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 4.2,
+                    "Sepal width": 1.5
+                },
+                "44": {
+                    "Name": "Flower 45",
+                    "Petal Length": 6.0,
+                    "Petal Width": 2.2,
+                    "Sepal Length": 4.0,
+                    "Sepal width": 1.0
+                },
+                "45": {
+                    "Name": "Flower 46",
+                    "Petal Length": 6.1,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 4.7,
+                    "Sepal width": 1.4
+                },
+                "46": {
+                    "Name": "Flower 47",
+                    "Petal Length": 5.6,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 3.6,
+                    "Sepal width": 1.3
+                },
+                "47": {
+                    "Name": "Flower 48",
+                    "Petal Length": 6.7,
+                    "Petal Width": 3.1,
+                    "Sepal Length": 4.4,
+                    "Sepal width": 1.4
+                },
+                "48": {
+                    "Name": "Flower 49",
+                    "Petal Length": 5.6,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 4.5,
+                    "Sepal width": 1.5
+                },
+                "49": {
+                    "Name": "Flower 50",
+                    "Petal Length": 5.8,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 4.1,
+                    "Sepal width": 1.0
+                },
+                "50": {
+                    "Name": "Flower 51",
+                    "Petal Length": 6.2,
+                    "Petal Width": 2.2,
+                    "Sepal Length": 4.5,
+                    "Sepal width": 1.5
+                },
+                "51": {
+                    "Name": "Flower 52",
+                    "Petal Length": 5.6,
+                    "Petal Width": 2.5,
+                    "Sepal Length": 3.9,
+                    "Sepal width": 1.1
+                },
+                "52": {
+                    "Name": "Flower 53",
+                    "Petal Length": 5.9,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 4.8,
+                    "Sepal width": 1.8
+                },
+                "53": {
+                    "Name": "Flower 54",
+                    "Petal Length": 6.1,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.0,
+                    "Sepal width": 1.3
+                },
+                "54": {
+                    "Name": "Flower 55",
+                    "Petal Length": 6.3,
+                    "Petal Width": 2.5,
+                    "Sepal Length": 4.9,
+                    "Sepal width": 1.5
+                },
+                "55": {
+                    "Name": "Flower 56",
+                    "Petal Length": 6.1,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.7,
+                    "Sepal width": 1.2
+                },
+                "56": {
+                    "Name": "Flower 57",
+                    "Petal Length": 6.4,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 4.3,
+                    "Sepal width": 1.3
+                },
+                "57": {
+                    "Name": "Flower 58",
+                    "Petal Length": 6.6,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 4.4,
+                    "Sepal width": 1.4
+                },
+                "58": {
+                    "Name": "Flower 59",
+                    "Petal Length": 6.8,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.8,
+                    "Sepal width": 1.4
+                },
+                "60": {
+                    "Name": "Flower 61",
+                    "Petal Length": 6.0,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 4.5,
+                    "Sepal width": 1.5
+                },
+                "61": {
+                    "Name": "Flower 62",
+                    "Petal Length": 5.7,
+                    "Petal Width": 2.6,
+                    "Sepal Length": 3.5,
+                    "Sepal width": 1.0
+                },
+                "62": {
+                    "Name": "Flower 63",
+                    "Petal Length": 5.5,
+                    "Petal Width": 2.4,
+                    "Sepal Length": 3.8,
+                    "Sepal width": 1.1
+                },
+                "63": {
+                    "Name": "Flower 64",
+                    "Petal Length": 5.5,
+                    "Petal Width": 2.4,
+                    "Sepal Length": 3.7,
+                    "Sepal width": 1.0
+                },
+                "64": {
+                    "Name": "Flower 65",
+                    "Petal Length": 5.8,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 3.9,
+                    "Sepal width": 1.2
+                },
+                "65": {
+                    "Name": "Flower 66",
+                    "Petal Length": 6.0,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 5.1,
+                    "Sepal width": 1.6
+                },
+                "67": {
+                    "Name": "Flower 68",
+                    "Petal Length": 5.8,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 5.1,
+                    "Sepal width": 1.9
+                },
+                "72": {
+                    "Name": "Flower 73",
+                    "Petal Length": 4.9,
+                    "Petal Width": 2.5,
+                    "Sepal Length": 4.5,
+                    "Sepal width": 1.7
+                },
+                "79": {
+                    "Name": "Flower 80",
+                    "Petal Length": 5.7,
+                    "Petal Width": 2.5,
+                    "Sepal Length": 5.0,
+                    "Sepal width": 2.0
+                },
+                "80": {
+                    "Name": "Flower 81",
+                    "Petal Length": 5.8,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 5.1,
+                    "Sepal width": 2.4
+                },
+                "85": {
+                    "Name": "Flower 86",
+                    "Petal Length": 6.0,
+                    "Petal Width": 2.2,
+                    "Sepal Length": 5.0,
+                    "Sepal width": 1.5
+                },
+                "87": {
+                    "Name": "Flower 88",
+                    "Petal Length": 5.6,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.9,
+                    "Sepal width": 2.0
+                },
+                "89": {
+                    "Name": "Flower 90",
+                    "Petal Length": 6.3,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 4.9,
+                    "Sepal width": 1.8
+                },
+                "92": {
+                    "Name": "Flower 93",
+                    "Petal Length": 6.2,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 4.8,
+                    "Sepal width": 1.8
+                },
+                "93": {
+                    "Name": "Flower 94",
+                    "Petal Length": 6.1,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 4.9,
+                    "Sepal width": 1.8
+                },
+                "99": {
+                    "Name": "Flower 100",
+                    "Petal Length": 6.3,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 5.1,
+                    "Sepal width": 1.5
+                }
+            }
+        }, {
+            "pearl_number": 1,
+            "centroid": {
+                "Petal Length": 6.938461538461539,
+                "Petal Width": 3.057692307692307,
+                "Sepal Length": 5.842307692307693,
+                "Sepal width": 2.023076923076923
+            },
+            "pearl_P": "Infinity",
+            "pearl_radius": 0.9615384615384617,
+            "pearl_centroid_3D": [3,3,3],
+            "pearl_list": {
+                "34": {
+                    "Name": "Flower 35",
+                    "Petal Length": 6.9,
+                    "Petal Width": 3.1,
+                    "Sepal Length": 4.9,
+                    "Sepal width": 1.5
+                },
+                "59": {
+                    "Name": "Flower 60",
+                    "Petal Length": 6.7,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 5.0,
+                    "Sepal width": 1.7
+                },
+                "66": {
+                    "Name": "Flower 67",
+                    "Petal Length": 6.3,
+                    "Petal Width": 3.3,
+                    "Sepal Length": 6.0,
+                    "Sepal width": 2.5
+                },
+                "68": {
+                    "Name": "Flower 69",
+                    "Petal Length": 7.1,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 5.9,
+                    "Sepal width": 2.1
+                },
+                "69": {
+                    "Name": "Flower 70",
+                    "Petal Length": 6.3,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 5.6,
+                    "Sepal width": 1.8
+                },
+                "70": {
+                    "Name": "Flower 71",
+                    "Petal Length": 6.5,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 5.8,
+                    "Sepal width": 2.2
+                },
+                "71": {
+                    "Name": "Flower 72",
+                    "Petal Length": 7.6,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 6.6,
+                    "Sepal width": 2.1
+                },
+                "73": {
+                    "Name": "Flower 74",
+                    "Petal Length": 7.3,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 6.3,
+                    "Sepal width": 1.8
+                },
+                "74": {
+                    "Name": "Flower 75",
+                    "Petal Length": 6.7,
+                    "Petal Width": 2.5,
+                    "Sepal Length": 5.8,
+                    "Sepal width": 1.8
+                },
+                "75": {
+                    "Name": "Flower 76",
+                    "Petal Length": 7.2,
+                    "Petal Width": 3.6,
+                    "Sepal Length": 6.1,
+                    "Sepal width": 2.5
+                },
+                "76": {
+                    "Name": "Flower 77",
+                    "Petal Length": 6.5,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 5.1,
+                    "Sepal width": 2.0
+                },
+                "77": {
+                    "Name": "Flower 78",
+                    "Petal Length": 6.4,
+                    "Petal Width": 2.7,
+                    "Sepal Length": 5.3,
+                    "Sepal width": 1.9
+                },
+                "78": {
+                    "Name": "Flower 79",
+                    "Petal Length": 6.8,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 5.5,
+                    "Sepal width": 2.1
+                },
+                "81": {
+                    "Name": "Flower 82",
+                    "Petal Length": 6.4,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 5.3,
+                    "Sepal width": 2.3
+                },
+                "82": {
+                    "Name": "Flower 83",
+                    "Petal Length": 6.5,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 5.5,
+                    "Sepal width": 1.8
+                },
+                "83": {
+                    "Name": "Flower 84",
+                    "Petal Length": 7.7,
+                    "Petal Width": 3.8,
+                    "Sepal Length": 6.7,
+                    "Sepal width": 2.2
+                },
+                "84": {
+                    "Name": "Flower 85",
+                    "Petal Length": 7.7,
+                    "Petal Width": 2.6,
+                    "Sepal Length": 6.9,
+                    "Sepal width": 2.3
+                },
+                "86": {
+                    "Name": "Flower 87",
+                    "Petal Length": 6.9,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 5.7,
+                    "Sepal width": 2.3
+                },
+                "88": {
+                    "Name": "Flower 89",
+                    "Petal Length": 7.7,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 6.7,
+                    "Sepal width": 2.0
+                },
+                "90": {
+                    "Name": "Flower 91",
+                    "Petal Length": 6.7,
+                    "Petal Width": 3.3,
+                    "Sepal Length": 5.7,
+                    "Sepal width": 2.1
+                },
+                "91": {
+                    "Name": "Flower 92",
+                    "Petal Length": 7.2,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 6.0,
+                    "Sepal width": 1.8
+                },
+                "94": {
+                    "Name": "Flower 95",
+                    "Petal Length": 6.4,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 5.6,
+                    "Sepal width": 2.1
+                },
+                "95": {
+                    "Name": "Flower 96",
+                    "Petal Length": 7.2,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 5.8,
+                    "Sepal width": 1.6
+                },
+                "96": {
+                    "Name": "Flower 97",
+                    "Petal Length": 7.4,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 6.1,
+                    "Sepal width": 1.9
+                },
+                "97": {
+                    "Name": "Flower 98",
+                    "Petal Length": 7.9,
+                    "Petal Width": 3.8,
+                    "Sepal Length": 6.4,
+                    "Sepal width": 2.0
+                },
+                "98": {
+                    "Name": "Flower 99",
+                    "Petal Length": 6.4,
+                    "Petal Width": 2.8,
+                    "Sepal Length": 5.6,
+                    "Sepal width": 2.2
+                }
+            }
+        }]
+    }, {
+        "cluster_number": 1,
+        "centroid": {
+            "Petal Length": 5.0272727272727264,
+            "Petal Width": 3.4060606060606067,
+            "Sepal Length": 1.5333333333333334,
+            "Sepal width": 0.27272727272727276
+        },
+        "pearl_list": [{
+            "pearl_number": 0,
+            "centroid": {
+                "Petal Length": 4.772222222222222,
+                "Petal Width": 3.161111111111111,
+                "Sepal Length": 1.5777777777777782,
+                "Sepal width": 0.2611111111111112
+            },
+            "pearl_P": 2,
+            "pearl_radius": 0.7482283602031845,
+            "pearl_centroid_3D": [0.0, 0.356, -0.012],
+            "pearl_list": {
+                "1": {
+                    "Name": "Flower 2",
+                    "Petal Length": 4.9,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.2
+                },
+                "2": {
+                    "Name": "Flower 3",
+                    "Petal Length": 4.7,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 1.3,
+                    "Sepal width": 0.2
+                },
+                "3": {
+                    "Name": "Flower 4",
+                    "Petal Length": 4.6,
+                    "Petal Width": 3.1,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.2
+                },
+                "6": {
+                    "Name": "Flower 7",
+                    "Petal Length": 4.6,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.3
+                },
+                "7": {
+                    "Name": "Flower 8",
+                    "Petal Length": 5.0,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.2
+                },
+                "8": {
+                    "Name": "Flower 9",
+                    "Petal Length": 4.4,
+                    "Petal Width": 2.9,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.2
+                },
+                "9": {
+                    "Name": "Flower 10",
+                    "Petal Length": 4.9,
+                    "Petal Width": 3.1,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.1
+                },
+                "11": {
+                    "Name": "Flower 12",
+                    "Petal Length": 4.8,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.6,
+                    "Sepal width": 0.2
+                },
+                "12": {
+                    "Name": "Flower 13",
+                    "Petal Length": 4.8,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.1
+                },
+                "13": {
+                    "Name": "Flower 14",
+                    "Petal Length": 4.3,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 1.1,
+                    "Sepal width": 0.1
+                },
+                "22": {
+                    "Name": "Flower 23",
+                    "Petal Length": 4.6,
+                    "Petal Width": 3.6,
+                    "Sepal Length": 1.0,
+                    "Sepal width": 0.2
+                },
+                "23": {
+                    "Name": "Flower 24",
+                    "Petal Length": 5.1,
+                    "Petal Width": 3.3,
+                    "Sepal Length": 1.7,
+                    "Sepal width": 0.5
+                },
+                "24": {
+                    "Name": "Flower 25",
+                    "Petal Length": 4.8,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.9,
+                    "Sepal width": 0.2
+                },
+                "25": {
+                    "Name": "Flower 26",
+                    "Petal Length": 5.0,
+                    "Petal Width": 3.0,
+                    "Sepal Length": 1.6,
+                    "Sepal width": 0.2
+                },
+                "26": {
+                    "Name": "Flower 27",
+                    "Petal Length": 5.0,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.6,
+                    "Sepal width": 0.4
+                },
+                "29": {
+                    "Name": "Flower 30",
+                    "Petal Length": 4.7,
+                    "Petal Width": 3.2,
+                    "Sepal Length": 1.6,
+                    "Sepal width": 0.2
+                },
+                "30": {
+                    "Name": "Flower 31",
+                    "Petal Length": 4.8,
+                    "Petal Width": 3.1,
+                    "Sepal Length": 1.6,
+                    "Sepal width": 0.2
+                },
+                "39": {
+                    "Name": "Flower 40",
+                    "Petal Length": 4.9,
+                    "Petal Width": 2.4,
+                    "Sepal Length": 3.3,
+                    "Sepal width": 1.0
+                }
+            }
+        }, {
+            "pearl_number": 1,
+            "centroid": {
+                "Petal Length": 5.333333333333334,
+                "Petal Width": 3.6999999999999997,
+                "Sepal Length": 1.48,
+                "Sepal width": 0.2866666666666667
+            },
+            "pearl_P": "Infinity",
+            "pearl_radius": 0.4666666666666659,
+            "pearl_centroid_3D": [-0.164, -0.395, 0.014],
+            "pearl_list": {
+                "0": {
+                    "Name": "Flower 1",
+                    "Petal Length": 5.1,
+                    "Petal Width": 3.5,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.2
+                },
+                "4": {
+                    "Name": "Flower 5",
+                    "Petal Length": 5.0,
+                    "Petal Width": 3.6,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.2
+                },
+                "5": {
+                    "Name": "Flower 6",
+                    "Petal Length": 5.4,
+                    "Petal Width": 3.9,
+                    "Sepal Length": 1.7,
+                    "Sepal width": 0.4
+                },
+                "10": {
+                    "Name": "Flower 11",
+                    "Petal Length": 5.4,
+                    "Petal Width": 3.7,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.2
+                },
+                "14": {
+                    "Name": "Flower 15",
+                    "Petal Length": 5.8,
+                    "Petal Width": 4.0,
+                    "Sepal Length": 1.2,
+                    "Sepal width": 0.2
+                },
+                "15": {
+                    "Name": "Flower 16",
+                    "Petal Length": 5.7,
+                    "Petal Width": 4.4,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.4
+                },
+                "16": {
+                    "Name": "Flower 17",
+                    "Petal Length": 5.4,
+                    "Petal Width": 3.9,
+                    "Sepal Length": 1.3,
+                    "Sepal width": 0.4
+                },
+                "17": {
+                    "Name": "Flower 18",
+                    "Petal Length": 5.1,
+                    "Petal Width": 3.5,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.3
+                },
+                "18": {
+                    "Name": "Flower 19",
+                    "Petal Length": 5.7,
+                    "Petal Width": 3.8,
+                    "Sepal Length": 1.7,
+                    "Sepal width": 0.3
+                },
+                "19": {
+                    "Name": "Flower 20",
+                    "Petal Length": 5.1,
+                    "Petal Width": 3.8,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.3
+                },
+                "20": {
+                    "Name": "Flower 21",
+                    "Petal Length": 5.4,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.7,
+                    "Sepal width": 0.2
+                },
+                "21": {
+                    "Name": "Flower 22",
+                    "Petal Length": 5.1,
+                    "Petal Width": 3.7,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.4
+                },
+                "27": {
+                    "Name": "Flower 28",
+                    "Petal Length": 5.2,
+                    "Petal Width": 3.5,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.2
+                },
+                "28": {
+                    "Name": "Flower 29",
+                    "Petal Length": 5.2,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.4,
+                    "Sepal width": 0.2
+                },
+                "31": {
+                    "Name": "Flower 32",
+                    "Petal Length": 5.4,
+                    "Petal Width": 3.4,
+                    "Sepal Length": 1.5,
+                    "Sepal width": 0.4
+                }
+            }
+        }]
+    }]
+}

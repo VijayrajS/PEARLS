@@ -1,0 +1,24 @@
+import sys
+
+sys.path.append(".")
+from .ClusteringAlgorithm import ClusteringAlgoTemplate
+from sklearn.cluster import KMeans
+
+class KMeansClustering(ClusteringAlgoTemplate):
+    """Class that contains the KMeans clustering function
+    """
+    @staticmethod
+    def create_clusters(Data, metadata, cluster_or_pearl="Cluster"):
+        """Method that returns cluster labels based on the KMeans algorithm
+        
+        Note: See the ClusteringAlgoTemplate class for explanation of parameters
+        and outputs
+        """
+        if cluster_or_pearl == "Cluster":
+            no_of_clusters = metadata['number_of_clusters']
+        else:
+            no_of_clusters = metadata['number_of_pearls']
+
+        kmeans_module = KMeans(n_clusters=no_of_clusters).fit(Data)
+        return kmeans_module.labels_, no_of_clusters
+ 
