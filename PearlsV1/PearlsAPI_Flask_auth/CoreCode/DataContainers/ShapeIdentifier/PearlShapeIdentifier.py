@@ -1,3 +1,4 @@
+from ..utils import distance
 import numpy as np
 import pandas as pd
 
@@ -5,7 +6,7 @@ import sys
 import math
 
 sys.path.append("..")
-from ..utils import distance
+
 
 class PearlShapeIdentifier:
     """A class that serves as a container class for multiple static methods that
@@ -32,9 +33,9 @@ class PearlShapeIdentifier:
         for index, row in data.iterrows():
             distance_from_centroid = distance(row, centroid, p)
             point_distances.append(distance_from_centroid)
-        
+
         return point_distances
-        
+
     @staticmethod
     def remove_10_percent_points(data, centroid):
         """Removes the farthest 10% of points from the data to avoid outliers
@@ -49,8 +50,8 @@ class PearlShapeIdentifier:
            remaining 10% points that are being removed
         """
 
-        point_distances = PearlShapeIdentifier.find_distances_from_centroid(\
-                            data, centroid, 2)
+        point_distances = PearlShapeIdentifier.find_distances_from_centroid(
+            data, centroid, 2)
 
         # Adding a field for distance from centroid, for easy sorting
         data['centroid_dist'] = point_distances
@@ -78,9 +79,9 @@ class PearlShapeIdentifier:
            The maximum of distances of all points in the data
         """
 
-        point_distances = PearlShapeIdentifier.find_distances_from_centroid(\
-                            data, centroid, p)
-        
+        point_distances = PearlShapeIdentifier.find_distances_from_centroid(
+            data, centroid, p)
+
         return np.max(point_distances)
 
     @staticmethod
@@ -116,7 +117,7 @@ class PearlShapeIdentifier:
 
         radius = point_tuple[1]
         Volume_const = PearlShapeIdentifier.calculate_volume_constant(
-                            point_tuple[0], n_dim)
+            point_tuple[0], n_dim)
         volume = Volume_const * (radius ** n_dim)
         return volume
 
@@ -137,46 +138,49 @@ class PearlShapeIdentifier:
 
         # Dropping primary key and removing outliers for shape calculation
         # pearl_data.drop(pearl_data.columns[0], axis=1, inplace=True)
-        filtered_data = PearlShapeIdentifier.remove_10_percent_points(\
-                            pearl_data, pearl_centroid)
+        filtered_data = PearlShapeIdentifier.remove_10_percent_points(
+            pearl_data, pearl_centroid)
 
         n_dim = len(pearl_data.columns)
 
         farthest_distance_list = []
 
+        # Data_scaled = filtered_data.iloc[:, 0:-1] = filtered_data.iloc[:, 0:-1].apply(
+        #     lambda x: (x-x.min()) / (x.max()-x.min()), axis=0)
+
         # Finding the point that gives the farthest distance for each value
         # of P in the P_list
         for p in P_list:
-            farthest_distance = PearlShapeIdentifier.find_farthest_distance(\
-                                filtered_data, pearl_centroid, p)
+            farthest_distance = PearlShapeIdentifier.find_farthest_distance(
+                filtered_data, pearl_centroid, p)
             p_distance_tuple = (p, farthest_distance)
             farthest_distance_list.append(p_distance_tuple)
-        
+
         minimum_volume = np.inf
         representative_point = None
 
         # Finding the best representative point according to the pearl shape
         # algorithm in the thesis
         for point_tuple in farthest_distance_list:
-            new_volume = PearlShapeIdentifier.calculate_volume(point_tuple, n_dim)
+            new_volume = PearlShapeIdentifier.calculate_volume(
+                point_tuple, n_dim)
             if new_volume < minimum_volume:
                 minimum_volume = new_volume
                 representative_point = point_tuple
-        
+
         best_P, best_radius = representative_point
         return best_P, best_radius
+
 
 if __name__ == '__main__':
     from PEARL import PEARL
     data = pd.DataFrame({
-        'Keys':list('XYZWT'),
+        'Keys': list('XYZWT'),
         'A': [2, 3, 1, 4, 1],
         'B': [-2, 2, 3, 3, 5],
         'C': [4, 1, 2, -1, 4],
         'D': [5, 4, 2, 4, 1]
-        })
-    
+    })
+
     new_p = PEARL(1, 1, data)
     print(PearlShapeIdentifier.calculate_shape(new_p))
-    
-

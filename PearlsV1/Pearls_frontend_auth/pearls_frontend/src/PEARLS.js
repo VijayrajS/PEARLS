@@ -7,9 +7,12 @@ import D3Plot, { PlotLegend } from './d3Plot'
 
 import FileUploader from './FileUpload'
 import ClusterModal from './ClusteringForm/ClusterModal'
+import RCCForm from './ClusteringForm/RCCmodal'
+
 import JSONtable from './JSON_to_table'
 import ClusterPearlDetails from './ClusterCard'
 import ClusterPearlDetailsModal from './ClusterCardModal'
+import ScaleToggle from './ToggleButton'
 
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
@@ -18,7 +21,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
-
+    
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Auth from './auth'
@@ -91,6 +94,7 @@ class PEARLS extends Component {
             n_clusters : 0,
             n_pearls: 0,
             currentFile: undefined,
+            currentJSONFile:undefined,
             currentAttribs: [],
             d3columns: [],
             
@@ -122,7 +126,9 @@ class PEARLS extends Component {
     getEmail() {
         return this.state.email;
     }
-    
+    async changeScale(sc) {
+        this._3DplotRef.current.changeScale(sc);
+    }
     async updateCurrentFile(fieldList){
         await this.setState({
             currentAttribs: fieldList
@@ -249,7 +255,8 @@ class PEARLS extends Component {
         return (
         <div>
             <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">PEARLS</Navbar.Brand>
+                <Navbar.Brand href="#home">PEARLS</Navbar.Brand>
+
                 <ClusterModal ref = {this._clusterFormRef}
                     appRef = {this}
                     fields = {this.state.currentAttribs}
@@ -257,10 +264,20 @@ class PEARLS extends Component {
                     plotRef={this._3DplotRef.current}
                     email={this.state.email}
                     />
+                {' '}
+                <RCCForm ref = {this._clusterFormRef}
+                    appRef = {this}
+                    fields = {this.state.currentAttribs}
+                    setNclusters={this.updateNClusters}
+                    plotRef={this._3DplotRef.current}
+                    email={this.state.email}
+                    />
+                
                     <Nav className="ml-auto">
                         <Nav.Link>
                             Welcome, {this.state.currentUser}
                         </Nav.Link>
+                        <ScaleToggle appRef={this}/>
                         <Button bg="dark" variant="dark"
                             style={{ float: 'right' }}
                             onClick={() => Auth.logout(() => {
@@ -325,7 +342,6 @@ class PEARLS extends Component {
                     {this.state.colorPalette &&
                             <PlotLegend palette={this.state.colorPalette} />}
                 </Card>
-                
             </div>
         </div>
         );

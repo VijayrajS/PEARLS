@@ -74,7 +74,7 @@ class PositioningModule:
         return cos_phi
 
     @staticmethod
-    def project_point_in_3D(point, cluster_centroid, cos_phi, p=2):
+    def project_point_in_3D(point, cluster_centroid, cos_phi, z_coord = None, p=2):
         """Calculates the 3D-projected coordinates of the point provided as input
            with respect to the cluster centroid being the origin
 
@@ -107,10 +107,16 @@ class PositioningModule:
 
         theta = (2 * math.pi * sector_number)/(2 ** n_dim)
         # Calculating the coordinates after getting theta and phi
-        x_coord = point_distance * math.cos(theta) * sin_phi
-        y_coord = point_distance * math.sin(theta) * sin_phi
-        z_coord = point_distance * cos_phi
-    
+        
+        if z_coord == None:
+            x_coord = point_distance * math.cos(theta) * sin_phi
+            y_coord = point_distance * math.sin(theta) * sin_phi
+            z_coord = point_distance * cos_phi
+        
+        else:
+            x_coord = point_distance * math.cos(theta)
+            y_coord = point_distance * math.sin(theta)
+
         coords = np.round((x_coord, y_coord, z_coord), 3)
         return tuple(coords)
 

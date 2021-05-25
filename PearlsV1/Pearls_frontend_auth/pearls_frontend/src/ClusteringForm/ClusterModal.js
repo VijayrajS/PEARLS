@@ -55,7 +55,6 @@ export default function ClusterModal(props) {
           </Modal.Header>
           <Modal.Body>
             Current file: {appRef.getCurrentFile()}
-            
           <ClusterSettings fieldList = {fields} ref={clusterForm}/>
           </Modal.Body>
           <Modal.Footer>

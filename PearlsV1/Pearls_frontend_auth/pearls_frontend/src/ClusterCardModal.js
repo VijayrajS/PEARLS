@@ -87,8 +87,8 @@ class ClusterPearlDetailsModal extends Component{
                             backgroundColor: '#000',
                             height: 5
                         }}
-                />
-                
+            />
+            
             <Table bordered responsive hover>
                 <thead>
                     <tr>
