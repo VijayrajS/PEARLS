@@ -230,10 +230,13 @@ class Cluster:
             filtered_pearls = deepcopy(self.pearls[i])
 
             filtered_pearls.data.drop(self.column_filter, axis=1, inplace=True)
-            pearl_centroid = find_centroid(filtered_pearls.data)
+            filtered_data = deepcopy(filtered_pearls)
+            filtered_data.data.drop(self.column_filter, axis=1, inplace=True)
+
+            pearl_centroid = find_centroid(filtered_data.data)
 
             cos_phi_of_pearl = PositioningModule.get_cos_phi(
-                filtered_pearls, self.cluster_centroid)
+                filtered_data, self.cluster_centroid)
 
             if bin_d != 'None':
                 print("*****", bin_d)

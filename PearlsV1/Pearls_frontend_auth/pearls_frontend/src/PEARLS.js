@@ -277,6 +277,9 @@ class PEARLS extends Component {
                         <Nav.Link>
                             Welcome, {this.state.currentUser}
                         </Nav.Link>
+                        
+                        <Navbar.Brand>| Scale: </Navbar.Brand>
+                        
                         <ScaleToggle appRef={this}/>
                         <Button bg="dark" variant="dark"
                             style={{ float: 'right' }}
@@ -298,7 +301,11 @@ class PEARLS extends Component {
                             reset={this.resetApp}
                             email={this.state.email} />
                     
-                    <div style={{ padding: '20px' }}></div> 
+                        <div style={{ padding: '20px' }}></div>
+                        <div style={{ color: '#fff' }}>
+                            <b>Note:</b> X-axis is in red, Y-axis in green and Z-axis in blue
+                        </div>
+                    <div style={{ padding: '20px' }}></div>     
                     
                     <DropdownButton id="dropdown-basic-button" title="Select cluster" disabled={this.state.n_clusters == 0}>
                         {

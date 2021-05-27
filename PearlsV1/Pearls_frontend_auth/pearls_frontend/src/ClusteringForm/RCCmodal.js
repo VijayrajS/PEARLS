@@ -36,7 +36,7 @@ export default function RCCModal(props) {
         if (!metadata['JSONfile']) {
           delete metadata.JSONfile;
         }
-      
+        console.log(metadata)
         fetch("http://localhost:5000/rcc", {
             method: 'POST',
             headers: {

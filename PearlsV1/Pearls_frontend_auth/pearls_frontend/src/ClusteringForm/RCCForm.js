@@ -56,14 +56,15 @@ class ClusterSettings extends React.Component{
         console.log(this.state.filtered_attributes)
     }
     
-    changePearlselect(pearlNo, e){
+    async changePearlselect(pearlNo, e){
         if (this.state.selected_pearls.includes(pearlNo)) {
             let ind = this.state.selected_pearls.indexOf(pearlNo)
-            this.state.selected_pearls.splice(ind, 1);
+            await this.state.selected_pearls.splice(ind, 1);
         }
         else {
-            this.state.selected_pearls.push(pearlNo);
+            await this.state.selected_pearls.push(pearlNo);
         }
+        console.log(this.state.selected_pearls)
     }
     
     handleChangeInBins = (e) => {
@@ -155,7 +156,7 @@ class ClusterSettings extends React.Component{
                         
                         Array.from(Array(this.totalPearls).keys()).map((element)=>(
                                 <Form.Check type="checkbox" 
-                                    defaultChecked={element}
+                                    defaultChecked={false}
                                     onChange={(e)=>this.changePearlselect(element, e)}
                                     label={element} />
                                     ))
