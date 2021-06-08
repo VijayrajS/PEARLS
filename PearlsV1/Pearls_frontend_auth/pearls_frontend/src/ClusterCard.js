@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import Card from 'react-bootstrap/esm/Card'
 
+// Tables in the ClusterCardModal to display currenty selected cluster and pearl details
+
 class ClusterPearlDetails extends React.Component {
     constructor(props) {
         super(props);

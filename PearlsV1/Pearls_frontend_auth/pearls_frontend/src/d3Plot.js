@@ -4,7 +4,7 @@ import chroma from "chroma-js";
 import { ParallelCoordinates } from 'react-vis'
 import '../node_modules/react-vis/dist/style.css';
 
-// import { XYPlot, XAxis, YAxis, HorizontalGridLines, LineSeries } from 'react-vis';
+// React component for the D3 plot
 
 const MARGIN = {
     left: 10,
@@ -23,15 +23,16 @@ const d3PlotStyle = {
 };
 
 function hexToRgb(hex) {
+    // Converts a hex code to its corresponding RGB value
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)];
   }
 
-export function Legend(props){
+export function Legend(props) {
+    // Function to generate legend for D3 plot
      return (
             <div style={{}}>
             {props.palette.map((element, index) => {
-            // let [r,g,b] = hexToRgb(element);
             return(
                 <div style = {{ height:'30%', backgroundColor:element, color:'black', float:'left', margin:'10px', padding:'10px'}}>
                     <b>Pearl {index}</b>
@@ -55,14 +56,16 @@ class D3Plot extends Component {
         this.fetchDomains = this.fetchDomains.bind(this);
     }
     
-    async setCurrentFile(filename){
+    async setCurrentFile(filename) {
+        // Set current file ame
         await this.setState({
             currentFile : filename
         });
     }
     
-    dataJSONtoPlotJson(dataJSON){ 
-        console.log(this.state.current_pearl);
+    dataJSONtoPlotJson(dataJSON) {
+        // Plots the inputted JSON data onto the D3 plot
+        
         let dataList;
         
         if(dataJSON){
@@ -112,7 +115,9 @@ class D3Plot extends Component {
         return dataList.flat(1);
     }
     
-    async fetchDomains(fileName){
+    async fetchDomains(fileName) {
+        // Fetches column names and ranges of each column
+        
         let jsonString = JSON.stringify({'filename': fileName, 'email': this.email});
         let domainMap;
         
@@ -129,16 +134,13 @@ class D3Plot extends Component {
                 return {name: element[0], domain: element[1]};
              })
         })
-        console.log(domainMap);
         return domainMap;
     }
     
+    // Helper function in the plot building process
     async buildProps(currentFile, newJSON) {
         let domainMap = await this.fetchDomains(currentFile);
-        console.log("AT BUILDPROPS")
-        console.log()
         if(!newJSON){
-            console.log(domainMap)
             
             return {
                 data: this.dataJSONtoPlotJson(),
@@ -152,6 +154,8 @@ class D3Plot extends Component {
             };
         }
     }
+    
+    // Functions to handle change of selected cluster/pearl
     
     async changePearl(pearlNumber, currentFile) {
         await this.setState({

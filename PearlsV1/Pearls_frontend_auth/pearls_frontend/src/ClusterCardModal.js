@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Table from 'react-bootstrap/Table'
 
+// Modal to display currenty selected cluster and pearl details
+
 class ClusterPearlDetailsModal extends Component{
     constructor(props) {
         super(props);
