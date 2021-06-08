@@ -16,8 +16,14 @@ class NpEncoder(json.JSONEncoder):
 
 
 class DatasetToJSON:
+    """
+        class to convert a dataset object to a JSON object to store in file
+    """
 
     def PEARL_to_JSON(self, PEARL_object, scale):
+        """
+            Function to convert pearl object to JSON
+        """
         Pearl_centroid = PEARL_object.get_3D_coords()
         PEARL_data = pd.DataFrame(PEARL_object.get_data())
         pearl_JSON = {
@@ -34,6 +40,9 @@ class DatasetToJSON:
         return pearl_JSON
 
     def cluster_to_JSON(self, cluster_object, scale=5):
+        """
+            Function to convert cluster object to JSON
+        """
         pearl_centroids = [pearl_obj.get_3D_coords()
                            for pearl_obj in cluster_object.pearls]
         scaling_factor = [0, 0, 0]
@@ -55,6 +64,10 @@ class DatasetToJSON:
         return cluster_JSON
 
     def convert_dataset_to_JSON(self, dataset_object):
+        """
+            Driver function
+        """
+
         converted_data = {
             'clusters': []
         }

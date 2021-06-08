@@ -374,9 +374,9 @@ class ReclusterClusters(Resource):
         metadata = request.json
         print(metadata)
 
-        #! WHAT TO DO FOR SELECTED PEARLS
         reclustered_cluster = DataDimensioning(
             metadata, CLUSTER_JSON_FOLDER, UPLOAD_FOLDER)
+
         # Save cluster later if required
         email = metadata["email"]
 
@@ -387,6 +387,7 @@ class ReclusterClusters(Resource):
         with open(JSON_file, 'r') as fp:
             data = json.load(fp)
 
+        # Replace the original cluster json with new cluster JSON
         data["clusters"][metadata["cluster_no"]] = reclustered_cluster
         with open(JSON_file, 'w') as fp:
             fp.write(json.dumps(data))

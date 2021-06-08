@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 
 from copy import deepcopy
-#! Expect import errors here while testing with server
 from .PEARL import PEARL
 
 sys.path.append("..")
@@ -65,9 +64,6 @@ class Cluster:
             self.bins_per_cluster = metadata['bins_per_cluster']
         except KeyError:
             self.bins_per_cluster = 1
-
-        #! POTENTIAL ERROR: NO BINNING CRITERION, BUT NUMBER OF BINS
-        #! MIGHT GET SET
 
     def create_PEARLS(self, attr_filter):
         """Function to trigger the formation of pearls of the concerned cluster.

@@ -10,6 +10,9 @@ from JSONconverter import DatasetToJSON
 def filter_attributes(selected_attributes, columns, dtypes):
     #! Throw error if all numerical attributes are deselected
     # TODO: ERROR HANDLING HERE
+    """
+        Takes care of attribute filtering during the Cluster Reclustering
+    """
 
     ALLOWED_DTYPES = ['int', 'float']
     selected_attributes = list(selected_attributes)
@@ -22,8 +25,14 @@ def filter_attributes(selected_attributes, columns, dtypes):
 
 
 def DataDimensioning(metadata, JSON_path, file_path):
+    """
+        Function to recluster a given cluster with a subset of selected pearls
+    """
+
+    # Extracting JSON file details
     is_single_cluster_file = True
     JSON_file = ""
+
     if "JSONfile" not in metadata.keys():
         JSON_file = metadata["filename"]
         is_single_cluster_file = False
@@ -49,6 +58,7 @@ def DataDimensioning(metadata, JSON_path, file_path):
 
     selected_pearls = metadata["selected_pearls"]
 
+    # Reclustering process
     pearl_list = [pearl["pearl_list"].keys() for pearl in ClusterJson["pearl_list"]
                   if pearl["pearl_number"] in selected_pearls]
     required_datapoints = [key for u in pearl_list for key in u]
@@ -58,7 +68,6 @@ def DataDimensioning(metadata, JSON_path, file_path):
     cluster_df = pd.read_csv(base_file).iloc[required_datapoints]
     attr_filter = filter_attributes(
         metadata["filtered_attributes"], cluster_df.columns, cluster_df.dtypes)
-    print(attr_filter)
 
     new_cluster = Cluster(
         ClusterJson["cluster_number"], cluster_df, attr_filter)
@@ -68,4 +77,3 @@ def DataDimensioning(metadata, JSON_path, file_path):
     new_cluster_json = DatasetToJSON().cluster_to_JSON(new_cluster)
 
     return new_cluster_json
-    # Save new cluster in a file

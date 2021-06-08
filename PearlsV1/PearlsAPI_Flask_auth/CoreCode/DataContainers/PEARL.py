@@ -2,7 +2,6 @@ import sys
 import numpy as np
 import pandas as pd
 
-#! Expect import errors here while testing with server
 sys.path.append("..")
 from .utils import find_centroid
 from .ShapeIdentifier.PearlShapeIdentifier import PearlShapeIdentifier

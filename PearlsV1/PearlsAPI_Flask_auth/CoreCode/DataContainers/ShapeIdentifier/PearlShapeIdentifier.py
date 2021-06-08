@@ -170,17 +170,3 @@ class PearlShapeIdentifier:
 
         best_P, best_radius = representative_point
         return best_P, best_radius
-
-
-if __name__ == '__main__':
-    from PEARL import PEARL
-    data = pd.DataFrame({
-        'Keys': list('XYZWT'),
-        'A': [2, 3, 1, 4, 1],
-        'B': [-2, 2, 3, 3, 5],
-        'C': [4, 1, 2, -1, 4],
-        'D': [5, 4, 2, 4, 1]
-    })
-
-    new_p = PEARL(1, 1, data)
-    print(PearlShapeIdentifier.calculate_shape(new_p))
