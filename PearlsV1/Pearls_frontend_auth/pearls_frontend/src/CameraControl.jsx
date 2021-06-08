@@ -4,6 +4,7 @@ import React from "react";
 import * as THREE from 'three'
 
 extend({ OrbitControls });
+// A functional component for the camera
 
 const Controls = () => {
   const { camera, gl } = useThree();

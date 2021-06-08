@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Table from 'react-bootstrap/Table'
 
+// React component for button and modal to show the data points enclosed by a current selected pearl
+
 class JSONtable extends Component{
     constructor(props) {
         super(props);
@@ -23,6 +25,7 @@ class JSONtable extends Component{
     }
     
     async setPearl(newPearlList, currentFile) {
+        // Setting current pearl
         if(!newPearlList){
             await this.setState({
                 pearlObject: undefined

@@ -4,7 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export default function Register() {
-    
+    // Functional component for registration form
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +27,6 @@ export default function Register() {
         })
         .then(response => response)
         .then(success => {
-            // alert(success.message)
             if (success.status == 201) {
                 alert("Registered successfuly");
             }
@@ -36,7 +36,6 @@ export default function Register() {
         })
           .catch((e) => {
             console.log(e);
-            // alert("Email already in use, try again");
         })
   }
 

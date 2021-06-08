@@ -1,9 +1,6 @@
 import React, { useRef, useState, useMemo } from 'react'
 import * as THREE from 'three'
 
-// import { Canvas, useFrame } from 'react-three-fiber'
-
-
 export default function Box(props) {
     // This reference will give us direct access to the mesh
     const mesh = useRef()

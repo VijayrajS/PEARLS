@@ -10,7 +10,12 @@ import { Controls } from './CameraControl'
 
 import Legend from './d3Plot'
 
+/**
+ * Class that represents the 3D plot component of the app
+ */
+
 const shapeFactory = (pearl, index, axesScale, pColor, isCurrPearl) => {
+    // Function that generates a shape object based on the pearl details
     
     let coords = undefined;
     let radius = 0;
@@ -57,7 +62,8 @@ const shapeFactory = (pearl, index, axesScale, pColor, isCurrPearl) => {
                 position={coords}/>); 
 }
 
-function Shapes(props){
+function Shapes(props) {
+    // Function that encloses all pearl shapes in the 3D plot
     let Colors =['blue', 'orange'];
     
     return (
@@ -92,18 +98,22 @@ class _3DPlot extends Component{
     }
 
     async changeCluster(new_json) {
+        // Function to assign the new cluster json and trigger the plotting process
         await this.setState({
             pearl_json : new_json
         })
         
     }
     
-    async changePearl(pearlNumber){
+    async changePearl(pearlNumber) {
+        // Function to assign the new pearl number
         await this.setState({
             currentPearl : pearlNumber
         })
     }
     
+    // Functions to show and hide axes
+    // {These are written since the axis lines and labels otherwise draw over the forms}
     async showAxes(){
         await this.setState({
             showAxes: true
@@ -117,6 +127,7 @@ class _3DPlot extends Component{
     }
     
     async changeScale(scale) {
+        // Switching between linear and log scale
         console.log("ChangeScale");
         console.log(scale);
         await this.setState({

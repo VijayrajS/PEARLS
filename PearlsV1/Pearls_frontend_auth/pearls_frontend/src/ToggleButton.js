@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
+// Functional component to toggle the scale of the 3D plot between linear and logarithmic modes
+
 export default function ScaleToggle(props) {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState('1');

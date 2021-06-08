@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Table from 'react-bootstrap/Table'
 
+// Component for the help modal
+
 class HelpModal extends Component{
     constructor(props) {
         super(props);

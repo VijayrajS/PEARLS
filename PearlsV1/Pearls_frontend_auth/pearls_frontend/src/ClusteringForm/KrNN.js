@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import Form from 'react-bootstrap/Form'
 
+// KRNN FORM
+
 export default function KrNNForm(params){
     
     const [kClustering, setKClusters] = useState(1);
@@ -9,7 +11,7 @@ export default function KrNNForm(params){
     const re = /^[1-9]\d*$/; //rules
     
     const handleChangeInClusters = (e) => {
-        
+        // Handles change in the number of clusters text box
         if (e.target.value === "" || re.test(e.target.value)) {
             setKClusters(e.target.value);
             params.stateFunc({KrNN_k_for_clustering: parseInt(e.target.value)})
@@ -17,6 +19,7 @@ export default function KrNNForm(params){
     }
     
     const handleChangeInPearls = (e) => {
+        // Handles change in the number of pearls text box
         if (e.target.value === "" || re.test(e.target.value)) {
             setKPearls(e.target.value);
             params.stateFunc({KrNN_k_for_pearling: parseInt(e.target.value)})

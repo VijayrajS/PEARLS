@@ -5,16 +5,22 @@ import Button from 'react-bootstrap/Button'
 
 import ClusterSettings from './ClusterForm'
 
+/**
+ * The modal that holds the cluster form, which sends the request to the backend server
+ */
+
 export default function ClusterModal(props) {
     const [show, setShow] = useState(false);
     const [fields, setFields] = useState(undefined);
     const appRef = props.appRef;
     
   const handleClose = () => {
+    // Function to hide modal
     setShow(false);
     props.plotRef.showAxes();
   }
   const handleShow = () => {
+    // Function to show modal
     console.log(props.axesControl)
       if(appRef.getCurrentFile()){
         setShow(true);
@@ -26,6 +32,8 @@ export default function ClusterModal(props) {
     const clusterForm = useRef(null);
     
     const handleSubmit = () => {
+      // Function to submit the form data to the backend server
+      
         console.log(clusterForm.current.getState());
         let metadata = clusterForm.current.getState();
         metadata['filename'] = appRef.getCurrentFile();

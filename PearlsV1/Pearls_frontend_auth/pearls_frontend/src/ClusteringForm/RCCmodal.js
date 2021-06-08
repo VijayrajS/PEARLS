@@ -5,6 +5,10 @@ import Button from 'react-bootstrap/Button'
 
 import RCCForm from './RCCForm'
 
+/**
+ * The modal that holds the cluster rexlustering form, which sends the request to the backend server
+ */
+
 export default function RCCModal(props) {
     const [show, setShow] = useState(false);
     const [fields, setFields] = useState(undefined);

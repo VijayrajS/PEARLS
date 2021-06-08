@@ -9,6 +9,8 @@ import Auth from './auth'
 
 import "./Login.css";
 
+// Component for the login page
+
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form'
 
 import Spinner from 'react-bootstrap/Spinner'
 
+// React component for File upload
+
 class FileUploader extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,8 @@ class FileUploader extends React.Component {
     this.email = props.email;
   }
 
-handleUpload(ev) {
+  handleUpload(ev) {
+  // Function to handle file upload
     ev.preventDefault();
     
     this.setState({loading : true});
@@ -65,8 +68,6 @@ handleUpload(ev) {
 
   render() {
     return (
-        
-    //! STYLE FORM
       <form onSubmit={this.handleUpload}>
           <Form.File ref={(ref) => { this.uploadInput = ref; }} 
           data-browse="Browse"

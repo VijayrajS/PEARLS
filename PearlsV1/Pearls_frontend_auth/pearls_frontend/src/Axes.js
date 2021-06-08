@@ -3,6 +3,8 @@ import React from 'react'
 import * as THREE from 'three'
 import { Html } from 'drei'
 
+// Functional component representing axes on the 3D plot
+
 export default function Axes(props) {
         
         let min_x = props.limits[0][0];

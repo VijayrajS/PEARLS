@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import Form from 'react-bootstrap/Form'
 
+// K-MEANS FORM
+
 export default function KMeansForm(params){
     
     const [nClusters, setNClusters] = useState(1);
@@ -9,6 +11,7 @@ export default function KMeansForm(params){
     const re = /^[1-9]\d*$/; //rules
     
     const handleChangeInClusters = (e) => {
+        // Handles change in the number of clusters text box
         if (e.target.value === "" || re.test(e.target.value)) {
             setNClusters(e.target.value);
             params.stateFunc({number_of_clusters: parseInt(e.target.value)})
@@ -16,6 +19,7 @@ export default function KMeansForm(params){
     }
     
     const handleChangeInPearls = (e) => {
+        // Handles change in the number of pearls text box
         if (e.target.value === "" || re.test(e.target.value)) {
             setNPearls(e.target.value);
             params.stateFunc({number_of_pearls: parseInt(e.target.value)})
