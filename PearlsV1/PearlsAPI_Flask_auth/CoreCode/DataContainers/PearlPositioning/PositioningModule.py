@@ -1,10 +1,10 @@
+from ..utils import distance
 import math
 import numpy as np
 
 import sys
 sys.path.append('..')
 
-from ..utils import distance
 
 class PositioningModule:
     """A class that serves as a container class for multiple static methods that
@@ -28,7 +28,7 @@ class PositioningModule:
 
         diff = np.array(point1) - np.array(point2)
         return np.array(np.square(diff))
-    
+
     @staticmethod
     def get_cos_phi(pearl, cluster_centroid):
         """Calculates the cosine of the projection angle phi of the pearl centre
@@ -54,7 +54,7 @@ class PositioningModule:
         variance_arr = np.zeros((1, len(pearl_data.columns)))
         # if(pearl_centroid.size == 0):
         #       print(pearl_data)
-        
+
         for index, row in pearl_data.iterrows():
             row_variance = PositioningModule.variance(row, pearl_centroid)
             variance_arr = variance_arr + row_variance
@@ -65,7 +65,7 @@ class PositioningModule:
 
         cos_phi = (pearl_centroid[minimum_variance_index]
                    - cluster_centroid[minimum_variance_index])
-        
+
         if pearl_distance == 0:
             # To avoid division by zero error
             return 0
@@ -74,7 +74,7 @@ class PositioningModule:
         return cos_phi
 
     @staticmethod
-    def project_point_in_3D(point, cluster_centroid, cos_phi, z_coord = None, p=2):
+    def project_point_in_3D(point, cluster_centroid, cos_phi, z_coord=None, p=2):
         """Calculates the 3D-projected coordinates of the point provided as input
            with respect to the cluster centroid being the origin
 
@@ -97,9 +97,9 @@ class PositioningModule:
         # If the point coincides with centroid, it is at the origin
         if point_distance == 0:
             return (0, 0, 0)
-        
+
         sector_number = 0
-        
+
         n_dim = len(point)
         for i in range(n_dim):
             if point[i] >= cluster_centroid[i]:
@@ -107,20 +107,15 @@ class PositioningModule:
 
         theta = (2 * math.pi * sector_number)/(2 ** n_dim)
         # Calculating the coordinates after getting theta and phi
-        
+
         if z_coord == None:
             x_coord = point_distance * math.cos(theta) * sin_phi
             y_coord = point_distance * math.sin(theta) * sin_phi
             z_coord = point_distance * cos_phi
-        
+
         else:
             x_coord = point_distance * math.cos(theta)
             y_coord = point_distance * math.sin(theta)
 
         coords = np.round((x_coord, y_coord, z_coord), 3)
         return tuple(coords)
-
-if __name__ == '__main__':
-    X = np.array([[2, -2, 4, 5], [3, 2, 1, 4], [1, 3, 2, 2], [4, 3, -1, 4],
-                  [1, 5, 4, 1]])
-    print((X, 4, [0, 0, 0, 0]))

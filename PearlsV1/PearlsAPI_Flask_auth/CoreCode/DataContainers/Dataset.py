@@ -199,4 +199,3 @@ if __name__ == '__main__':
 
     json_converter = DatasetToJSON()
     print(json_converter.convert_dataset_to_JSON(dataset_object))
-    # print(final_time)

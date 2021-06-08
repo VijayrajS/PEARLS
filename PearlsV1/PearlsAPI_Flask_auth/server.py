@@ -121,7 +121,7 @@ class Login(Resource):
                 {'WWW-Authenticate': 'Basic realm ="Login required !!"'}
             )
 
-        user = User.query.filter_by(email=auth['email']).first()
+        user = User.query.filter_by(email=auth['email'].lower()).first()
 
         if not user:
             # returns 401 if user does not exist

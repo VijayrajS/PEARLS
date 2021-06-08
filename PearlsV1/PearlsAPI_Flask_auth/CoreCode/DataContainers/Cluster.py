@@ -151,7 +151,10 @@ class Cluster:
         """
 
         bin_labels = []
-        binning_criterion = self.pearling_metadata['binning_criterion']
+        if 'binning_criterion' not in self.pearling_metadata.keys():
+            binning_criterion = 'None'
+        else:
+            binning_criterion = self.pearling_metadata['binning_criterion']
 
         if binning_criterion == 'binsize':
             # Split data into approximately equal bin sizes
@@ -229,7 +232,7 @@ class Cluster:
 
             filtered_pearls = deepcopy(self.pearls[i])
 
-            filtered_pearls.data.drop(self.column_filter, axis=1, inplace=True)
+            # filtered_pearls.data.drop(self.column_filter, axis=1, inplace=True)
             filtered_data = deepcopy(filtered_pearls)
             filtered_data.data.drop(self.column_filter, axis=1, inplace=True)
 
@@ -239,7 +242,6 @@ class Cluster:
                 filtered_data, self.cluster_centroid)
 
             if bin_d != 'None':
-                print("*****", bin_d)
                 z_coord = filtered_pearls.data[bin_d].mean()
                 pearl_centroid_coords = PositioningModule.project_point_in_3D(
                     pearl_centroid, self.cluster_centroid, cos_phi_of_pearl, z_coord)
