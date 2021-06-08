@@ -13,17 +13,19 @@ import JSONtable from './JSON_to_table'
 import ClusterPearlDetails from './ClusterCard'
 import ClusterPearlDetailsModal from './ClusterCardModal'
 import ScaleToggle from './ToggleButton'
-
+import HelpModal from './HelpModal'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Popover from 'react-bootstrap/Popover'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
-    
-import 'bootstrap/dist/css/bootstrap.min.css';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Auth from './auth'
 
 const divStyle = {
@@ -82,6 +84,12 @@ const clusterDetailStyle = {
     width: "71vw",
     float:'left',
 };
+
+const renderTooltip = (props) => (
+  <Tooltip id="button-tooltip" {...props}>
+    fbdfhh
+  </Tooltip>
+);
 
 class PEARLS extends Component {
     constructor(props){
@@ -255,24 +263,30 @@ class PEARLS extends Component {
         return (
         <div>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">PEARLS</Navbar.Brand>
-
-                <ClusterModal ref = {this._clusterFormRef}
-                    appRef = {this}
-                    fields = {this.state.currentAttribs}
-                    setNclusters={this.updateNClusters}
-                    plotRef={this._3DplotRef.current}
-                    email={this.state.email}
-                    />
-                {' '}
-                <RCCForm ref = {this._clusterFormRef}
-                    appRef = {this}
-                    fields = {this.state.currentAttribs}
-                    setNclusters={this.updateNClusters}
-                    plotRef={this._3DplotRef.current}
-                    email={this.state.email}
-                    />
-                
+                    <Navbar.Brand href="#home">PEARLS</Navbar.Brand>
+                    <HelpModal plotRef={this._3DplotRef}/>
+                    <OverlayTrigger overlay={(<Tooltip id="hi">After uploading a file, select the options to cluster/recluster the file</Tooltip>)} placement="bottom">
+                    <div>
+                        <ClusterModal ref = {this._clusterFormRef}
+                        appRef = {this}
+                        fields = {this.state.currentAttribs}
+                        setNclusters={this.updateNClusters}
+                        plotRef={this._3DplotRef.current}
+                        email={this.state.email}
+                        />
+                    </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger overlay={(<Tooltip id="hi">Use this to recluster data points in a particular cluster, with options for binning</Tooltip>)} placement="bottom">
+                        <div>
+                        <RCCForm ref={this._clusterFormRef}
+                            appRef = {this}
+                            fields = {this.state.currentAttribs}
+                            setNclusters={this.updateNClusters}
+                            plotRef={this._3DplotRef.current}
+                            email={this.state.email}
+                            />
+                        </div>
+                    </OverlayTrigger>
                     <Nav className="ml-auto">
                         <Nav.Link>
                             Welcome, {this.state.currentUser}
@@ -329,17 +343,25 @@ class PEARLS extends Component {
                     </DropdownButton>
                     
                     <div style={{ padding: '10px' }} /> 
-                    
-                    <ClusterPearlDetailsModal ref={this._clusterCardRef} plotRef={this._3DplotRef}/>
-                    
-                    <Card bg = 'dark' style = {{float: 'right', width:'20vh', marginTop:'10px'}}>
-                            <JSONtable ref={this._pearlCardRef} plotRef={this._3DplotRef} email={this.state.email}/>
-                    </Card>
+                    <OverlayTrigger overlay={(<Tooltip id="hi">Details of currently selected cluster and (if selected) pearl</Tooltip>)} placement="bottom">
+                        <div>
+                            <ClusterPearlDetailsModal ref={this._clusterCardRef} plotRef={this._3DplotRef}/>
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger overlay={(<Tooltip id="hi">Data points in selected pearl in CSV form</Tooltip>)} placement="bottom">
+                        <div>
+                        <Card bg = 'dark' style = {{float: 'right', width:'20vh', marginTop:'10px'}}>
+                            <JSONtable ref={this._pearlCardRef} plotRef={this._3DplotRef} email={this.state.email} />
+                        </Card>
+                        </div>
+                    </OverlayTrigger>
                 </Card>
                 
-                    <Card bg='light' style={{ ...d3plotStyle, height:'100px' }}>
-                    <b>Columns:</b> {this.state.d3columns.length > 0 ? this.state.d3columns.join(', ') : "None"}
-                    <div style={{ padding: '10px' }}/>
+                    <Card bg='light' style={{ ...d3plotStyle, height:'150px' }}>
+                    <b>Columns</b> {this.state.d3columns.length > 0 ? this.state.d3columns.join(', ') : "None"}
+                        <div style={{ padding: '10px' }} />
+                        <i>Note:</i> The columns are in the order as displayed by the parallel coordinates plot shown below.
+                        <div style={{ padding: '10px' }} />
                 </Card>
                 <Card bg = 'light' style={d3plotStyle}>
                     <div style={{ padding: '10px' }}/>

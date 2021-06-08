@@ -32,11 +32,6 @@ class ClusterSettings extends React.Component{
             KrNN_k_for_clustering: 1,
             KrNN_k_for_pearling:1,
             
-            // Binning
-            binning_criterion: "None",
-            binning_dimension: "None",
-            bins_per_cluster: 0,
-            
             filtered_attributes: Array.from({length: this.fieldList.length}, (x, i) => true)
         }
         
@@ -122,39 +117,6 @@ class ClusterSettings extends React.Component{
                 
                 {/* Binning form */}
                 <div>
-                    Binning dimension: <DropdownButton id="dropdown-basic-button" title={this.state.binning_dimension}>
-                        {this.bin_crit.map((element)=>(
-                            <Dropdown.Item key={element} onSelect={
-                                ()=>this.setState({binning_dimension:element.replace(/\"/g, '')})}>
-                                {element}</Dropdown.Item>
-                        ))}
-                    </DropdownButton>
-                    
-                    Binning criterion: <DropdownButton id="dropdown-basic-button" title={this.state.binning_criterion}>
-                        {['none', 'binsize', 'range'].map((element)=>(
-                            <Dropdown.Item key={element} onSelect={
-                                ()=>this.setState({binning_criterion:element})}>
-                                {element}</Dropdown.Item>
-                        ))}
-                    </DropdownButton>
-                    
-                    {this.state.binning_criterion !== 'None' &&
-                        <div>Number of bins: <Form.Control placeholder="Number of Bins"
-                            onChange={this.handleChangeInBins} value={this.state.bins_per_cluster}/></div>
-                    }
-                    
-                    {this.state.binning_criterion == 'range' &&
-                        <div>
-                        Binning dimension <DropdownButton id="dropdown-basic-button" title={this.state.binning_dimension}>
-                            {this.fieldList.map((element)=>(
-                                <Dropdown.Item key={element} onSelect={
-                                    ()=>this.setState({binning_dimension:element})}>
-                                    {element}</Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                        </div>
-                    }
-                    
                     Attribute filtering:
                     <Form.Group controlId="formBasicCheckbox">
                     {
