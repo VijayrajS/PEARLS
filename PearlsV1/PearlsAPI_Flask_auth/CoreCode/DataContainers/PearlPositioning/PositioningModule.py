@@ -76,24 +76,25 @@ class PositioningModule:
     @staticmethod
     def project_point_in_3D(point, cluster_centroid, cos_phi, z_coord=None, p=2):
         """Calculates the 3D-projected coordinates of the point provided as input
-           with respect to the cluster centroid being the origin
+            with respect to the cluster centroid being the origin
 
-           Method parameters:
-           * point: The point whose centre's 3D-projected coordinates have to be
-             calculated
-           * cluster_centroid: The centroid of the cluster enclosing the current
-             point
-           * cos_phi: The value of cos(phi), where phi refers to the inclination
-             angle of the point (in spherical coordinates)
-           * p: The "p" to calculate the (p-)distance between two points
+            Method parameters:
+            * point: The point whose centre's 3D-projected coordinates have to be
+              calculated
+            * cluster_centroid: The centroid of the cluster enclosing the current
+              point
+            * cos_phi: The value of cos(phi), where phi refers to the inclination
+              angle of the point (in spherical coordinates)
+            * p: The "p" to calculate the (p-)distance between two points
 
-           Output:
-           A 3-tuple, representing the x,y, and z-coordinates of the point projected
-           in 3D with respect to the cluster centroid
+            Output:
+            A 3-tuple, representing the x,y, and z-coordinates of the point projected
+            in 3D with respect to the cluster centroid
         """
 
         sin_phi = 1 - cos_phi ** 2
         point_distance = distance(point, cluster_centroid, p)
+        
         # If the point coincides with centroid, it is at the origin
         if point_distance == 0:
             return (0, 0, 0)
