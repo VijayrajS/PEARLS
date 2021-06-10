@@ -310,7 +310,7 @@ class PEARLS extends Component {
                 
                 <Card bg = 'dark' style = {bigCardStyle}>
                         <FileUploader
-                            getMeta={this.updateCurrentFile}
+                         getMeta={this.updateCurrentFile}
                             setCurrFile={this.setCurrentFile}
                             reset={this.resetApp}
                             email={this.state.email} />
