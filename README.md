@@ -23,7 +23,7 @@ For setting up the frontend, do the following in the pearls_frontend folder:
 *  ``yarn test`` : Starts the test runner.
 
 One can begin by typing (while withiin the pearls_frontend folder):
-```
+```bash
   yarn install # Only for the first time setting up the frontend
   yarn start   # Hosts the frontend on localhost:3000
 ```
