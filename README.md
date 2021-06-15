@@ -70,7 +70,10 @@ This call is used to recluster a particular cluster with a subset of selected pe
 For more details on the backend, check the documentation in the repository root.
 
 # Issues and further work
-*
-*
-
+* **Dealing with the file system** : As of now, the system is stateless, with files being added to the corresponding user's folder, but the user cannot access previously uploaded files. An API call to do the same, and necessary additions to the frontend can be done.
+* **Vulnerabilities and security concerns** : The toolkit works fine as it is on a local context. But, a web app is designed for a server deployment, and security is a main concern (especially for valuable datasets etc.). Basic JWT token security has been provided, but flaws may still persist. Such flaws can be fixed in further iterations.
+* **Better testing strategies for the entire toolkit** : As of now, there are no proper test cases to test the app and the correctness of the backend. A testing strategy (and a CI/CD pipeline-like setup if possible) can be implemented for the same.
+* **Graceful error handling for any corner cases found** : Due to the lack of a strategy, there might be some bugs in the system, which may return some generic errors. Such workflows can be detected, and more informative error messages can be added for the same.
+* **Better parallel-coordinates plot component** : As of now, the frontend uses the [react-vis](https://uber.github.io/react-vis/) for displaying a parallel coordinates plot for a given cluster. The framework seems to be rendering the plots, but without labels. For now a workaround has been done, but a custom component for the same would be favourable.
+* **Issues with the 3D-plots** : For now, users can select a pearl by using a dropdown menu. Previously, a hover-to-select pearl was implemented in three.js. However, this was extremely slow. Identifying the bottlenecks and re-introducing this feature would be favourable.
 
