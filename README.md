@@ -7,7 +7,7 @@ The PEARLS data visualisation is used to provide a conceptual visualisation of h
 The web app for the same has been implemented with ReactJS library on the frontend, and python code on the backend (hosted on the backend).
 
 ## Author of original code : [Vijayraj Shanmugaraj](https://github.com/VijayrajS)
-## Guide for project: [Prof. Kamal Karlapalem](https://faculty.iiit.ac.in/~kamal/)
+## Guide for project: [Kamal Karlapalem](https://faculty.iiit.ac.in/~kamal/)
 
 # Setting the PEARLS toolkit up locally
 ## Prerequirements
