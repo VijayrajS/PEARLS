@@ -21,7 +21,7 @@ const shapeFactory = (pearl, index, axesScale, pColor, isCurrPearl) => {
     let radius = 0;
     if (axesScale == 1) {
         coords = pearl['scaled_coords'];
-        radius = pearl["pearl_radius"];
+        radius = pearl["pearl_radius_scaled"];
     }
     
     else {

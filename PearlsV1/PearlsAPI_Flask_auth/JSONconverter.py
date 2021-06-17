@@ -20,7 +20,7 @@ class DatasetToJSON:
         class to convert a dataset object to a JSON object to store in file
     """
 
-    def PEARL_to_JSON(self, PEARL_object, scale):
+    def PEARL_to_JSON(self, PEARL_object, scale, radius_scale):
         """
             Function to convert pearl object to JSON
         """
@@ -32,6 +32,7 @@ class DatasetToJSON:
 
             'pearl_P': PEARL_object.get_P(),
             'pearl_radius': PEARL_object.get_radius(),
+            'pearl_radius_scaled': PEARL_object.get_radius()/radius_scale,
 
             'pearl_centroid_3D': Pearl_centroid,
             'pearl_list': PEARL_data.to_dict(orient="index"),
@@ -55,10 +56,11 @@ class DatasetToJSON:
             if scaling_factor[i] == 0:
                 scaling_factor[i] = 1
 
+        radius_scaling_factor = cluster_object.max_radius/10
         cluster_JSON = {
             'cluster_number': cluster_object.get_clusterID(),
             'centroid': cluster_object.get_centroid().to_dict(),
-            'pearl_list': list(map(lambda x: self.PEARL_to_JSON(x, scaling_factor), cluster_object.pearls))
+            'pearl_list': list(map(lambda x: self.PEARL_to_JSON(x, scaling_factor, radius_scaling_factor), cluster_object.pearls))
         }
 
         return cluster_JSON

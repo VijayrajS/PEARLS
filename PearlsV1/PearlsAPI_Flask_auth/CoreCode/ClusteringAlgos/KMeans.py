@@ -22,7 +22,7 @@ class KMeansClustering(ClusteringAlgoTemplate):
             no_of_clusters = metadata['number_of_pearls']
 
         Data_scaled = Data.iloc[:, 0:-1] = Data.iloc[:, 0:-1].apply(
-            lambda x: (x-x.mean()) / x.std(), axis=0)
+            lambda x: (x-x.mean()) / (x.std()+1), axis=0)
 
         kmeans_module = KMeans(n_clusters=no_of_clusters).fit(Data_scaled)
         return kmeans_module.labels_, no_of_clusters

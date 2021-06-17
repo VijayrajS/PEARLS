@@ -169,4 +169,5 @@ class PearlShapeIdentifier:
                 representative_point = point_tuple
 
         best_P, best_radius = representative_point
+        print(best_radius)
         return best_P, best_radius

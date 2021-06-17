@@ -80,6 +80,14 @@ class Cluster:
         self.create_bin_labels()
         self.add_PEARLS_to_list(attr_filter)
         self.set_PEARL_coordinates()
+
+        # Getting scaled radii
+        max_radius = -1
+        for pearl in self.pearls:
+            max_radius = max(max_radius, pearl.get_radius())
+
+        self.max_radius = max_radius
+
         # Clearing data of the cluster in order to save space in main memory
         self.clear_data()
 
@@ -224,7 +232,10 @@ class Cluster:
         """
 
         for i in range(len(self.pearls)):
-            bin_d = self.pearling_metadata['binning_dimension']
+            if 'binning_dimension' not in self.pearling_metadata.keys():
+                bin_d = 'None'
+            else:
+                bin_d = self.pearling_metadata['binning_dimension']
 
             filtered_pearls = deepcopy(self.pearls[i])
 

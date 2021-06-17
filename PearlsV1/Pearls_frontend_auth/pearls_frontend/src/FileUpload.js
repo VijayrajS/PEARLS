@@ -51,7 +51,6 @@ class FileUploader extends React.Component {
     .then(success => {
         this.setState({loading : false});
         this.setCurrFile(fName);
-        console.log("Fileupload:" + success['fieldList'])
         this.getMeta(success['fieldList']);
         this.resetApp();
     })
