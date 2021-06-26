@@ -4,7 +4,7 @@
 
 The PEARLS data visualisation is used to provide a conceptual visualisation of high-dimensional data clusters, proposed by Mr. Nahil Jain in 2012. The algorithm aims to extract meaningful information from large quantities of data by clustering them using some already existing clustering algorithm, re-clustering the clusters to form ‘pearls’, which are then assigned a particular shape, and placed in 3D space with respect to the centroid of the cluster. For a more detailed description of the algorithm, refer to [‘Visual Analysis of High Dimensional Real Data - Nahil Jain, 2012’](https://faculty.iiit.ac.in/~kamal/thesis_Nahil_Jain.pdf).
 
-The web app for the same has been implemented with ReactJS library on the frontend, and python code on the backend (hosted on the backend).
+The web app for the same has been implemented with ReactJS library on the frontend, and python code on the backend (hosted on the backend). [Click here](https://www.youtube.com/watch?v=lh8wPMyOxVM) to see the demo video.
 
 ## Author of original code : [Vijayraj Shanmugaraj](https://github.com/VijayrajS)
 ## Guide for project: [Kamal Karlapalem](https://faculty.iiit.ac.in/~kamal/)
@@ -74,6 +74,6 @@ For more details on the backend, check the documentation in the repository root.
 * **Vulnerabilities and security concerns** : The toolkit works fine as it is on a local context. But, a web app is designed for a server deployment, and security is a main concern (especially for valuable datasets etc.). Basic JWT token security has been provided, but flaws may still persist. Such flaws can be fixed in further iterations.
 * **Better testing strategies for the entire toolkit** : As of now, there are no proper test cases to test the app and the correctness of the backend. A testing strategy (and a CI/CD pipeline-like setup if possible) can be implemented for the same.
 * **Graceful error handling for any corner cases found** : Due to the lack of a strategy, there might be some bugs in the system, which may return some generic errors. Such workflows can be detected, and more informative error messages can be added for the same.
-* **Better parallel-coordinates plot component** : As of now, the frontend uses the [react-vis](https://uber.github.io/react-vis/) for displaying a parallel coordinates plot for a given cluster. The framework seems to be rendering the plots, but without labels. For now a workaround has been done, but a custom component for the same would be favourable.
+* **Better parallel-coordinates plot component** : As of now, the frontend uses the [react-vis](https://uber.github.io/react-vis/) library for displaying a parallel coordinates plot for a given cluster. The framework seems to be rendering the plots, but without labels. For now a workaround has been done, but a custom component for the same would be favourable.
 * **Issues with the 3D-plots** : For now, users can select a pearl by using a dropdown menu. Previously, a hover-to-select pearl was implemented in three.js. However, this was extremely slow. Identifying the bottlenecks and re-introducing this feature would be favourable.
 
