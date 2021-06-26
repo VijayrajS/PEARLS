@@ -87,7 +87,8 @@ class _3DPlot extends Component{
             showAxes: false,
             
             axesScale:1,
-            scale: 1
+            scale: 1,
+            mode: 0
         };
         
         this.sceneRef = React.createRef();
@@ -135,12 +136,20 @@ class _3DPlot extends Component{
         })
     }
     
+    async changeMode(mode) {
+        await this.setState({
+            // 0 for dark, 1 for light
+            mode: mode
+        })
+    }
+    
     render(){
         return (
             <Canvas ref = {this.sceneRef} orthographic={false} onCreated={({ camera }) => camera.lookAt(0,0,0)}>
+                <color attach="background" args={[["black", "white"][this.state.mode]]} />
                 <ambientLight />
                 <pointLight position={[0, 10, 10]} />
-                {this.state.showAxes && <Axes limits={[[-10, 10], [-10, 10], [-10, 10]]} />}
+                {this.state.showAxes && <Axes limits={[[-10, 10], [-10, 10], [-10, 10]]} labelColor={[["white", "black"][this.state.mode]]}/>}
                 <Shapes jsonObj={this.state.pearl_json} axesScale={this.state.axesScale} currentPearl = {this.state.currentPearl}/>
                 <Controls />
             </Canvas>

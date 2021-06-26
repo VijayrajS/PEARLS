@@ -14,6 +14,8 @@ export default function Axes(props) {
         let min_z = props.limits[2][0];
         let max_z = props.limits[2][1];
         
+        let labelColor = props.labelColor;
+    
         const inf = Math.pow(10, 10);
         const origin = new THREE.Vector3( 0, 0, 0 );
         const x_axis = new THREE.Vector3( 1, 0, 0 );
@@ -31,7 +33,7 @@ export default function Axes(props) {
             {Array.from({length: max_x - min_x + 1},(v,k)=>k + min_x).map(
                 (e)=>(
                     <Html scaleFactor={7} position={[e, 0, 0]}>
-                        <div style={{color:'#ffffff'}}>
+                        <div style={{color:labelColor}}>
                             {e}
                         </div>
                     </Html>
@@ -40,7 +42,7 @@ export default function Axes(props) {
             {Array.from({length: max_y - min_y + 1},(v,k)=>k + min_y).map(
                 (e)=>(
                     <Html scaleFactor={7} position={[0, e, 0]}>
-                        <div style={{color:'#ffffff'}}>
+                        <div style={{color:labelColor}}>
                             {e}
                         </div>
                     </Html>
@@ -49,7 +51,7 @@ export default function Axes(props) {
             {Array.from({length: max_z - min_z + 1},(v,k)=>k + min_z).map(
                 (e)=>(
                     <Html scaleFactor={7} position={[0, 0, e]}>
-                        <div style={{color:'#ffffff'}}>
+                        <div style={{color:labelColor}}>
                             {e}
                         </div>
                     </Html>

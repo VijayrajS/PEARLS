@@ -14,9 +14,10 @@ import ClusterPearlDetails from './ClusterCard'
 import ClusterPearlDetailsModal from './ClusterCardModal'
 import ScaleToggle from './ToggleButton'
 import HelpModal from './HelpModal'
+import DarkModeButton from './DarkModeButton'
+
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Popover from 'react-bootstrap/Popover'
@@ -25,6 +26,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 
+import DarkModeToggle from "react-dark-mode-toggle";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Auth from './auth'
 
@@ -134,9 +136,15 @@ class PEARLS extends Component {
     getEmail() {
         return this.state.email;
     }
+    
     async changeScale(sc) {
-        this._3DplotRef.current.changeScale(sc);
+        await this._3DplotRef.current.changeScale(sc);
     }
+    
+    async changeMode(mode){
+        await this._3DplotRef.current.changeMode(mode); 
+    }
+    
     async updateCurrentFile(fieldList){
         await this.setState({
             currentAttribs: fieldList
@@ -264,7 +272,8 @@ class PEARLS extends Component {
         <div>
             <Navbar bg="dark" variant="dark">
                     <Navbar.Brand href="#home">PEARLS</Navbar.Brand>
-                    <HelpModal plotRef={this._3DplotRef}/>
+                    <HelpModal plotRef={this._3DplotRef} />
+                   
                     <OverlayTrigger overlay={(<Tooltip id="hi">After uploading a file, select the options to cluster/recluster the file</Tooltip>)} placement="bottom">
                     <div>
                         <ClusterModal ref = {this._clusterFormRef}
@@ -277,15 +286,18 @@ class PEARLS extends Component {
                     </div>
                     </OverlayTrigger>
                     <OverlayTrigger overlay={(<Tooltip id="hi">Use this to recluster data points in a particular cluster, with options for binning</Tooltip>)} placement="bottom">
-                        <div>
-                        <RCCForm ref={this._clusterFormRef}
-                            appRef = {this}
-                            fields = {this.state.currentAttribs}
-                            setNclusters={this.updateNClusters}
-                            plotRef={this._3DplotRef.current}
-                            email={this.state.email}
-                            />
-                        </div>
+                    <div>
+                    <RCCForm ref={this._clusterFormRef}
+                    appRef = {this}
+                    fields = {this.state.currentAttribs}
+                    setNclusters={this.updateNClusters}
+                    plotRef={this._3DplotRef.current}
+                    email={this.state.email}
+                    />
+                    </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger overlay={(<Tooltip id="hi">Graph theme (dark/light)</Tooltip>)} placement="bottom">
+                        <div style={{paddingLeft:'10px'}}><DarkModeButton appRef={this} /></div>
                     </OverlayTrigger>
                     <Nav className="ml-auto">
                         <Nav.Link>
